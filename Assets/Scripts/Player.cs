@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
   private string direction = "right";
   private string gunDirection = "right";
   private float walkSpeed = 1;
+  private int jumpPower = 100;
   private bool jumping;
 
   void Start()
@@ -50,7 +51,7 @@ public class Player : MonoBehaviour
     if (Input.GetKey("space") && !jumping)
     {
       jumping = true;
-      GetComponent<Rigidbody2D>().velocity = new Vector2(0, 50);
+      GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpPower);
     }
   }
 
