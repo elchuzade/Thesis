@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6835576566616771946}
   - component: {fileID: 6835576566616771947}
   - component: {fileID: 3630381312502497275}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -89,10 +89,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1884.9003
+  m_Mass: 942.5175
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 10
+  m_GravityScale: 100
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -136,3 +136,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21acad6fa57d497a9a88bf08d494d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 4950963212997904884, guid: b70348148c91e4a119be88f80f4769e2,
+    type: 3}
