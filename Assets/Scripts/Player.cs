@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -14,12 +13,13 @@ public class Player : MonoBehaviour
   private float fireRate = 0.1f;
   [SerializeField] GameObject bulletPrefab;
   private Transform gameSpace;
-
+  private int screenWidth = 1920;
   Coroutine shootCoroutine;
-
+  RectTransform playerBody;
   void Awake()
   {
     gameSpace = transform.parent.Find("GameSpace");
+    playerBody = (RectTransform)gameObject.transform;
   }
   void Start()
   {
@@ -77,13 +77,19 @@ public class Player : MonoBehaviour
     {
       gunDirection = "right";
       direction = "right";
-      transform.position = new Vector3(transform.position.x + walkSpeed, transform.position.y, 0);
+      if (transform.position.x + walkSpeed + playerBody.rect.width / 2 < screenWidth)
+      {
+        transform.position = new Vector3(transform.position.x + walkSpeed, transform.position.y, 0);
+      }
     }
     if (Input.GetKey("left"))
     {
       gunDirection = "left";
       direction = "left";
-      transform.position = new Vector3(transform.position.x - walkSpeed, transform.position.y, 0);
+      if (transform.position.x - walkSpeed - playerBody.rect.width / 2 > 0)
+      {
+        transform.position = new Vector3(transform.position.x - walkSpeed, transform.position.y, 0);
+      }
     }
     if (Input.GetKey("up"))
     {
