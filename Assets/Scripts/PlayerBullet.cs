@@ -48,6 +48,11 @@ public class PlayerBullet : MonoBehaviour
     direction = bulletDirection;
   }
 
+  public int GetDamage()
+  {
+    return damage;
+  }
+
   void OnCollisionEnter2D(Collision2D collision)
   {
     Destroy(gameObject);
