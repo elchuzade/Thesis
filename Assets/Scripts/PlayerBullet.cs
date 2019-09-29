@@ -1,12 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
   private float speed;
   private int damage;
   private string direction;
+
+  void Awake()
+  {
+
+  }
+
   void Start()
   {
 
@@ -44,7 +48,7 @@ public class PlayerBullet : MonoBehaviour
     direction = bulletDirection;
   }
 
-  void OnCollisionEnter2D(Collision2D collider)
+  void OnCollisionEnter2D(Collision2D collision)
   {
     Destroy(gameObject);
   }

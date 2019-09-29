@@ -16,10 +16,13 @@ public class Player : MonoBehaviour
   private int screenWidth = 1920;
   Coroutine shootCoroutine;
   RectTransform playerBody;
+  private GameStatus gameStatus;
+
   void Awake()
   {
     gameSpace = transform.parent.Find("GameSpace");
     playerBody = (RectTransform)gameObject.transform;
+    gameStatus = transform.parent.Find("GameStatus").gameObject.GetComponent<GameStatus>();
   }
   void Start()
   {
@@ -118,7 +121,7 @@ public class Player : MonoBehaviour
     }
     if (collision.gameObject.tag == "Coin")
     {
-      Debug.Log("Got a coin");
+      gameStatus.AddCoins();
       Destroy(collision.gameObject);
     }
   }
