@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Bullet
   - MapLimits
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -17,14 +18,14 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - PlayerBullet
+  - Enemy
+  - EnemyBullet
+  - MapLimits
+  - Platform
+  - Blocks
+  - Coin
   - 
   - 
   - 

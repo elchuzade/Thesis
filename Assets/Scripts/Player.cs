@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
   private float bulletSpeed = 10;
   private int bulletDamage = 10;
-
   private string direction = "right";
   private string gunDirection = "right";
   private float walkSpeed = 5;
@@ -58,16 +56,16 @@ public class Player : MonoBehaviour
     switch (direction)
     {
       case "right":
-        offset.x = rt.rect.width / 2;
+        offset.x = rt.rect.width / 2 + 10;
         break;
       case "left":
-        offset.x = -rt.rect.width / 2;
+        offset.x = -rt.rect.width / 2 - 10;
         break;
       case "up":
-        offset.y = rt.rect.height / 2;
+        offset.y = rt.rect.height / 2 + 10;
         break;
       case "down":
-        offset.y = -rt.rect.height / 2;
+        offset.y = -rt.rect.height / 2 - 10;
         break;
     }
     return offset;
@@ -111,6 +109,11 @@ public class Player : MonoBehaviour
     if (collision.gameObject.tag == "Platform")
     {
       jumping = false;
+    }
+    if (collision.gameObject.tag == "Coin")
+    {
+      Debug.Log("Got a coin");
+      Destroy(collision.gameObject);
     }
   }
 }
