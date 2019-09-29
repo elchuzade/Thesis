@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-  private int healthPoints = 5;
+  private int healthPoints = 50;
 
   private void DecreaseHealth(int damage)
   {

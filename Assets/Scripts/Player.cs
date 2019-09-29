@@ -4,7 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
   private float bulletSpeed = 10;
-  private int bulletDamage = 10;
+  private int bulletDamage = 1;
   private string direction = "right";
   private string gunDirection = "right";
   private float walkSpeed = 5;
